@@ -1,7 +1,21 @@
-
 <nav>
     <ul>
-        <li><a href="{{ path('main_home') }}">Home</a> </li>
-        <li><a href="{{ path('main_test') }}">Test</a></li>
+        <li>
+            <a href="{{ path('main_home') }}" title="home">Accueil</a>
+
+            <a href="{{ path('main_aboutus') }}" title="about us">About Us</a>
+            <a href="{{ path('wish_list') }}" title="wish list">Wish list</a>
+            <a href="{{ path('wish_listBestWish') }}" title="wish best of">Best of</a>
+
+
+            {% if app.user %}
+                <a href="{{ path('wish_create') }}" title="create">Make a Wish</a>
+                <a href="{{ path('app_logout') }}" title="Logout">Logout ({{ app.user.pseudo }})</a>
+            {% else %}
+                <a href="{{ path('app_login') }}" title="Login">Login</a>
+                <a href="{{ path('app_register') }}" title="Register">Register</a>
+            {% endif %}
+
+        </li>
     </ul>
 </nav>

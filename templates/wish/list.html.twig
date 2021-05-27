@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+   <h2>List of ideas</h2>
+
+
+    <section class="wish-list">
+
+        {% for wish in wishes %}
+        <article class="articleContainer">
+        <div class="article">
+            <a class="wish" href="{{ path('wish_detail',{'id' : wish.id}) }}"> {{ wish.title }}</a>
+            <div class="wish">crée le :    {{ wish.dateCreated | date ('Y-m-d')}}</div>
+            <div class="wish">note : {{ wish.note }}</div>
+            <div class="wish">category : {{ wish.category.name }}</div>
+            <br>
+        </div>
+        </article>
+        {% endfor %}
+    </section>
+{% endblock %}
+

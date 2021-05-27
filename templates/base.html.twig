@@ -5,25 +5,48 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %} Séries {% endblock %}</title>
+    <title>{% block title %} My Bucket List {% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-    <link rel="icon" href="{{ asset('img/icon.png') }}">
+    <link rel="icon" href="{{ asset('img/list.png') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
-<header>
-    <h1><a href="{{ path('main_home') }}"> <img src="{{ asset('img/logo.svg') }}" alt="Series !"> </a> </h1>
+<div class="navContainer">
     {% include 'menu/nav.html.twig' %}
+</div>
+<header>
+    <div class="mainImgContainer">
+        <a class="mainImgContainer" href="{{ path('main_home') }}"> <img class="mainImg"
+                                                                         src="{{ asset('img/logo.png') }}"
+                                                                         alt="Bucket List !">
+        </a>
+    </div>
+
+    {% if app.user %}
+        <div class="helloUser">
+        <h2>Hello {{ app.user.pseudo }}</h2>
+        </div>
+    {% endif %}
+
 </header>
+{# Gestion de message flash #}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
 <main>
     {% block body %}{% endblock %}
 </main>
+
 <footer>
-    {% include 'menu/nav.html.twig' %}
+    <div>@BucketList {{ "now"|date('Y') }}</div>
 </footer>
 
 </body>

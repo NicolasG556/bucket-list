@@ -1,4 +1,109 @@
-body{
+main{
     background-color: crimson;
     font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #048b9a;
+
+}
+header{
+    height: 300px;
+    justify-content: center;
+}
+.mainImgContainer{
+
+    display: flex;
+    justify-content: center;
+    height: 300px;
+
+}
+
+.mainImg{
+
+    border-radius: 8px;
+    height: 100%;
+    width : 100%;
+
+}
+.navContainer{
+    margin: 50px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #9c9c9c;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+main{
+    background-color: #9c9c9c;
+    justify-content: center;
+    margin: 100px;
+}
+
+.articleContainer{
+    border: solid;
+    border-radius: 8px;
+    margin: 20px;
+
+}
+
+.article{
+    margin: 10px;
+}
+.helloUser{
+    display: flex;
+    justify-content: center;
+}
+
+.wish{
+    font-family: "Comic Sans MS";
+}
+
+footer{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h1{
+    justify-content: center;
+}
+
+footer{
+    background-color: #9c9c9c;
+}
+/*********************** Module 6 Form ******************************/
+
+label {
+    display: block;
+}
+
+input,
+textarea,
+select {
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 150px;
+    max-width: 50%;
+}
+/*************************** Module 6 Flash *******************************/
+
+.flash {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    color: #132135;
+}
+
+.flash-success {
+    background-color: lawngreen
+}
+
+.flash-error {
+    background-color: red
 }
